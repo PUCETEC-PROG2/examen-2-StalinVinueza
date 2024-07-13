@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}PELICULAS Y MOVIES {% endblock title %}
+
+{% block content %}
+
+    <p class="p-2">Registro de peliculas que he mirado este año</p>
+
+
+    <ul class="list-group">
+        {% for movie in movies %}
+
+                    <li class="list-group-item">
+                        <p>{{movie.tytle}}</p>
+                        <a href="movie/{{movie.id}}">{{ movie | capfirst }}</a>
+                        <p>{{movie.director}}</p>
+                        <p>{{movie.year}}</p>
+                        <p>{{movie.synopsis}}</p>
+                    </li>
+                    {% endfor %}
+    </ul>
+    
+{% endblock content %}
+
+
+    
